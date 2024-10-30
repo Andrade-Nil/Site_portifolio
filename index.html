@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Futurista</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1920') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translatey(0); }
+            50% { transform: translatey(-10px); }
+        }
+        .cursor-effect {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            mix-blend-mode: difference;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+
+    <div class="flex flex-col items-center justify-center h-screen">
+        <h1 class="text-5xl md:text-7xl font-bold floating">Bem-vindo ao meu Portfólio</h1>
+        <p class="mt-4 text-xl md:text-2xl">Desenvolvedor Frontend com habilidades em várias tecnologias.</p>
+        <div class="mt-10">
+            <a href="#skills" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Minhas Habilidades</a>
+            <a href="#projects" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300 ml-4">Projetos</a>
+            <a href="#contact" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition duration-300 ml-4">Contato</a>
+        </div>
+    </div>
+
+    <section id="skills" class="py-20 bg-black bg-opacity-60">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">Habilidades</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">C</div>
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">Java</div>
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">JavaScript</div>
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">Ruby on Rails</div>
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">GitHub</div>
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">Trello</div>
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">Figma</div>
+                <div class="p-4 rounded shadow-lg bg-gray-800 floating">UX/UI</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-gray-900 bg-opacity-70">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">Projetos</h2>
+            <p class="mt-4">Aqui estão alguns dos meus projetos recentes:</p>
+            <!-- Adicione links ou descrições de projetos aqui -->
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-black bg-opacity-60">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">Contato</h2>
+            <form class="mt-8">
+                <input type="text" class="border border-gray-400 p-2 rounded w-1/2" placeholder="Seu Nome" required>
+                <input type="email" class="border border-gray-400 p-2 rounded w-1/2 mt-4" placeholder="Seu Email" required>
+                <textarea class="border border-gray-400 p-2 rounded w-1/2 mt-4" rows="4" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Meu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Efeito do cursor
+            const cursor = $('<div class="cursor-effect"></div>').appendTo('body');
+            $(document).on('mousemove', function(e) {
+                cursor.css({
+                    left: e.pageX + 'px',
+                    top: e.pageY + 'px',
+                });
+            });
+        });
+    </script>
+</body>
+</html>
